@@ -1,0 +1,7 @@
+#!/bin/bash
+
+app=$1
+index=${2:-'1'}
+echo -- Testing [$index] $app
+diff <(cat $app/sample$index.in | python $app/app.py) <(cat $app/sample$index.out)
+echo -- Over.
