@@ -4,6 +4,8 @@
 
 All problems come from [微软2016校园招聘4月在线笔试](http://hihocoder.com/contest/mstest2016april1/problems).
 
+See also [微软 2016 年 4 月笔试报告](http://arrowrowe.me/#!/blog/2016/ms-interview).
+
 ## Usage
 
 ```
@@ -11,7 +13,7 @@ All problems come from [微软2016校园招聘4月在线笔试](http://hihocoder
   problem and one of its samples.
 
   Usage
-  $ ./try <problem-name> [sampe-index]
+  $ ./try <problem-name> [sampe-index=1]
 
   Examples
   $ ./try a-font-size
