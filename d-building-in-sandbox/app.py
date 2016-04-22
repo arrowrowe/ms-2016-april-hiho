@@ -33,10 +33,12 @@ class Sand:
     self.cubeIndex += 1
 
   def valid(self):
+    if self.cubeIndex == 0:
+      return True
     self.world = getWorldWithCubes(self.xBound, self.yBound, self.zBound, self.cubes)
     zMax = self.zBound - 1
     self.floodfill([(x, y, zMax) for x in xrange(self.xBound) for y in xrange(self.yBound)])
-    for cubeIndex in xrange(len(self.cubes) - 1, -1, -1):
+    for cubeIndex in xrange(len(self.cubes) - 1, 0, -1):
       x, y, z = self.cubes[cubeIndex]
       if (
         z and self.hasNoSuchNeighbor(x, y, z, BLOCK_WITH_CUBE)
@@ -46,7 +48,7 @@ class Sand:
         return False
       self.world[x][y][z] = BLOCK_DEAD
       self.floodfill([(x, y, z)])
-    return True
+    return self.cubes[0][2] == 0
 
   def hasNoSuchNeighbor(self, x, y, z, neighbor):
     for x, y, z in getNeighbors(x, y, z):
