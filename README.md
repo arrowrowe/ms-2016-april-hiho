@@ -13,7 +13,7 @@ See also [微软 2016 年 4 月笔试报告](http://arrowrowe.me/#!/blog/2016/ms
   problem and one of its samples.
 
   Usage
-  $ ./try <problem-name> [sampe-index=1]
+  $ ./try <problem-name> [sample-index=1]
 
   Examples
   $ ./try a-font-size
